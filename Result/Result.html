@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <script defer="" src="./Result_files/bundle.js.download"></script><style>@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);</style><style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(http://localhost:3000/static/media/background.d84e38aa9a6a0804b139.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.wrapper .headline {
+  font-size: 56px;
+  color: rgb(235, 231, 231);
+  text-align: center;
+  margin-top: 10px;
+  
+}
+
+.custom-form {
+  margin-top: 15px;
+  width: 450px;
+  padding: 10px;
+  margin: 0 auto;
+  
+}
+
+.search-box {
+  display: flex;
+  text-align: center;
+}
+
+.search-box input {
+  border-radius: 0;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.search-box button {
+  background-color: rgb(0, 81, 255);
+  border-radius: 0;
+  color:rgb(235, 231, 231);
+  
+}
+
+@media(max-width: 768px) {
+  .wrapper .headline {
+    font-size: 36px;
+  }
+
+  .custom-form {
+    width: 100%;
+  }
+
+  .custom-form label {
+    font-size: 16px;
+  }
+}
+
+.current-conditions-box {
+  width: 450px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+@media(max-width: 768px) {
+  .current-conditions-box {
+    width: 100%;
+  }
+}
+
+.city-country {
+  color: #fff;
+  text-align: center;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.temperature-value {
+  font-size: 96px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+
+.deg {
+  font-size: 48px;
+}
+
+.weather-text {
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+.weather-img {
+  width: 120px;
+  height: auto;
+}
+
+.loader-box {
+  width: 450px;
+  height: 400px;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBRUE7RUFDRSxTQUFTO0VBQ1QsVUFBVTtFQUNWLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2IseURBQWdEO0VBQ2hELHNCQUFzQjtFQUN0Qiw0QkFBNEI7RUFDNUIsa0NBQWtDO0VBQ2xDLGdCQUFnQjtFQUNoQixpQ0FBaUM7QUFDbkM7O0FBRUE7RUFDRSxXQUFXO0VBQ1gsaUJBQWlCO0VBQ2pCLGNBQWM7RUFDZCxhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGVBQWU7RUFDZix5QkFBeUI7RUFDekIsa0JBQWtCO0VBQ2xCLGdCQUFnQjs7QUFFbEI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsWUFBWTtFQUNaLGFBQWE7RUFDYixjQUFjOztBQUVoQjs7QUFFQTtFQUNFLGFBQWE7RUFDYixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGlDQUFpQztFQUNqQyxnQkFBZ0I7RUFDaEIsd0JBQXdCOztBQUUxQjs7QUFFQTtFQUNFO0lBQ0UsZUFBZTtFQUNqQjs7RUFFQTtJQUNFLFdBQVc7RUFDYjs7RUFFQTtJQUNFLGVBQWU7RUFDakI7QUFDRjs7QUFFQTtFQUNFLFlBQVk7RUFDWixzQkFBc0I7RUFDdEIsbUJBQW1CO0VBQ25CLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsbUJBQW1CO0VBQ25CLHVCQUF1QjtFQUN2QixZQUFZO0VBQ1osYUFBYTtFQUNiLGNBQWM7QUFDaEI7O0FBRUE7RUFDRTtJQUNFLFdBQVc7RUFDYjtBQUNGOztBQUVBO0VBQ0UsV0FBVztFQUNYLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLHVCQUF1QjtFQUN2QixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsV0FBVztFQUNYLGdCQUFnQjtFQUNoQixrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsV0FBVztFQUNYLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLFlBQVk7RUFDWixZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxZQUFZO0VBQ1osYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixhQUFhO0VBQ2IsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixjQUFjO0FBQ2hCIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9Um9ib3RvJmRpc3BsYXk9c3dhcCcpO1xuXG4qIHtcbiAgbWFyZ2luOiAwO1xuICBwYWRkaW5nOiAwO1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuXG5ib2R5IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwdmg7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi9pbWFnZXMvYmFja2dyb3VuZC5qcGcnKTtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyIGNlbnRlcjtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZm9udC1mYW1pbHk6ICdSb2JvdG8nLCBzYW5zLXNlcmlmO1xufVxuXG4ud3JhcHBlciB7XG4gIHdpZHRoOiAxMDAlO1xuICBtYXgtd2lkdGg6IDE0NDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93LXk6IGF1dG87XG4gIG92ZXJmbG93LXg6IGhpZGRlbjtcbn1cblxuLndyYXBwZXIgLmhlYWRsaW5lIHtcbiAgZm9udC1zaXplOiA1NnB4O1xuICBjb2xvcjogcmdiKDIzNSwgMjMxLCAyMzEpO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbi10b3A6IDEwcHg7XG4gIFxufVxuXG4uY3VzdG9tLWZvcm0ge1xuICBtYXJnaW4tdG9wOiAxNXB4O1xuICB3aWR0aDogNDUwcHg7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBcbn1cblxuLnNlYXJjaC1ib3gge1xuICBkaXNwbGF5OiBmbGV4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5zZWFyY2gtYm94IGlucHV0IHtcbiAgYm9yZGVyLXJhZGl1czogMDtcbiAgZm9udC1zaXplOiAyMnB4O1xuICBtYXJnaW4tYm90dG9tOiA0cHg7XG59XG5cbi5zZWFyY2gtYm94IGJ1dHRvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6IHJnYigwLCA4MSwgMjU1KTtcbiAgYm9yZGVyLXJhZGl1czogMDtcbiAgY29sb3I6cmdiKDIzNSwgMjMxLCAyMzEpO1xuICBcbn1cblxuQG1lZGlhKG1heC13aWR0aDogNzY4cHgpIHtcbiAgLndyYXBwZXIgLmhlYWRsaW5lIHtcbiAgICBmb250LXNpemU6IDM2cHg7XG4gIH1cblxuICAuY3VzdG9tLWZvcm0ge1xuICAgIHdpZHRoOiAxMDAlO1xuICB9XG5cbiAgLmN1c3RvbS1mb3JtIGxhYmVsIHtcbiAgICBmb250LXNpemU6IDE2cHg7XG4gIH1cbn1cblxuLmN1cnJlbnQtY29uZGl0aW9ucy1ib3gge1xuICB3aWR0aDogNDUwcHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNmZmY7XG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBoZWlnaHQ6IGF1dG87XG4gIHBhZGRpbmc6IDIwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xufVxuXG5AbWVkaWEobWF4LXdpZHRoOiA3NjhweCkge1xuICAuY3VycmVudC1jb25kaXRpb25zLWJveCB7XG4gICAgd2lkdGg6IDEwMCU7XG4gIH1cbn1cblxuLmNpdHktY291bnRyeSB7XG4gIGNvbG9yOiAjZmZmO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5kZXRhaWxzIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuXG4udGVtcGVyYXR1cmUtdmFsdWUge1xuICBmb250LXNpemU6IDk2cHg7XG4gIGNvbG9yOiAjZmZmO1xuICBmb250LXdlaWdodDogNjAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5kZWcge1xuICBmb250LXNpemU6IDQ4cHg7XG59XG5cbi53ZWF0aGVyLXRleHQge1xuICBjb2xvcjogI2ZmZjtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmb250LXdlaWdodDogNjAwO1xuICBmb250LXNpemU6IDI4cHg7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG59XG5cbi53ZWF0aGVyLWltZyB7XG4gIHdpZHRoOiAxMjBweDtcbiAgaGVpZ2h0OiBhdXRvO1xufVxuXG4ubG9hZGVyLWJveCB7XG4gIHdpZHRoOiA0NTBweDtcbiAgaGVpZ2h0OiA0MDBweDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2ZmZjtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIG1hcmdpbjogMCBhdXRvO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */</style><style data-styled="" data-styled-version="4.4.1">
+/* sc-component-id: ball__Wrapper-sc-1edcqkl-0 */
+
+/* sc-component-id: ball__Ball-sc-1edcqkl-1 */
+
+/* sc-component-id: grid__Wrapper-sc-11vno70-0 */
+
+/* sc-component-id: grid__Ball-sc-11vno70-1 */
+
+/* sc-component-id: swap__Wrapper-sc-1a8o1b-0 */
+
+/* sc-component-id: swap__Ball-sc-1a8o1b-1 */
+
+/* sc-component-id: bars__Wrapper-sc-1sb659-0 */
+
+/* sc-component-id: bars__Bar-sc-1sb659-1 */
+
+/* sc-component-id: wave__Wrapper-sc-8a0z7x-0 */
+
+/* sc-component-id: wave__Bar-sc-8a0z7x-1 */
+
+/* sc-component-id: push__Wrapper-ypksxs-0 */
+
+/* sc-component-id: push__Bar-ypksxs-1 */
+
+/* sc-component-id: firework__Wrapper-sc-1bn5a2-0 */
+
+/* sc-component-id: stage__Wrapper-sc-161krao-0 */
+
+/* sc-component-id: stage__Ball-sc-161krao-1 */
+
+/* sc-component-id: heart__Wrapper-sc-12jb06u-0 */
+
+/* sc-component-id: guard__Wrapper-sc-13axfn9-0 */
+
+/* sc-component-id: guard__CubeWrapper-sc-13axfn9-1 */
+
+/* sc-component-id: guard__Cube-sc-13axfn9-2 */
+
+/* sc-component-id: guard__Side-sc-13axfn9-3 */
+
+/* sc-component-id: circle__Wrapper-sc-16bbsoy-0 */
+
+/* sc-component-id: spiral__Wrapper-sc-1898s0q-0 */
+
+/* sc-component-id: spiral__CubeWrapper-sc-1898s0q-1 */
+
+/* sc-component-id: spiral__Cube-sc-1898s0q-2 */
+
+/* sc-component-id: spiral__Side-sc-1898s0q-3 */
+
+/* sc-component-id: pulse__Wrapper-sc-1yr0qmr-0 */
+
+/* sc-component-id: pulse__Cube-sc-1yr0qmr-1 */
+
+/* sc-component-id: sequence__Wrapper-sc-61fmm1-0 */
+
+/* sc-component-id: sequence__CubeWrapper-sc-61fmm1-1 */
+
+/* sc-component-id: sequence__Cube-sc-61fmm1-2 */
+
+/* sc-component-id: sequence__Side-sc-61fmm1-3 */
+
+/* sc-component-id: domino__Wrapper-sc-81zu9-0 */
+
+/* sc-component-id: domino__Bar-sc-81zu9-1 */
+
+/* sc-component-id: impulse__Wrapper-sc-1eafdhu-0 */
+
+/* sc-component-id: impulse__Ball-sc-1eafdhu-1 */
+
+/* sc-component-id: cube__Wrapper-sc-1iks05k-0 */
+
+/* sc-component-id: cube__CubeWrapper-sc-1iks05k-1 */
+
+/* sc-component-id: cube__Cube-sc-1iks05k-2 */
+
+/* sc-component-id: cube__Side-sc-1iks05k-3 */
+
+/* sc-component-id: fill__Wrapper-ehv7z4-0 */
+</style><style data-styled="" data-styled-version="4.4.1">
+/* sc-component-id: fill__Plane-ehv7z4-1 */
+
+/* sc-component-id: sphere__Wrapper-sc-1t5xu9p-0 */
+
+/* sc-component-id: sphere__Ball-sc-1t5xu9p-1 */
+
+/* sc-component-id: flag__Wrapper-sc-3eh05c-0 */
+
+/* sc-component-id: flag__Line-sc-3eh05c-1 */
+
+/* sc-component-id: flag__Plane-sc-3eh05c-2 */
+
+/* sc-component-id: clap__Wrapper-sc-12p9tb5-0 */
+
+/* sc-component-id: clap__Ball-sc-12p9tb5-1 */
+
+/* sc-component-id: rotate__Wrapper-sc-1b62bh9-0 */
+
+/* sc-component-id: rotate__Ball-sc-1b62bh9-1 */
+
+/* sc-component-id: swish__Wrapper-e0szto-0 */
+
+/* sc-component-id: swish__Ball-e0szto-1 */
+
+/* sc-component-id: goo__Wrapper-sc-12keask-0 */
+
+/* sc-component-id: goo__BallsWrapper-sc-12keask-1 */
+
+/* sc-component-id: goo__Ball-sc-12keask-2 */
+
+/* sc-component-id: comb__Wrapper-x9t4ur-0 */
+
+/* sc-component-id: comb__Bar-x9t4ur-1 */
+
+/* sc-component-id: pong__Wrapper-sc-1lbqo08-0 */
+
+/* sc-component-id: pong__Ball-sc-1lbqo08-1 */
+
+/* sc-component-id: pong__Player-sc-1lbqo08-2 */
+
+/* sc-component-id: rainbow__Wrapper-sc-1ugdhww-0 */
+
+/* sc-component-id: rainbow__Line-sc-1ugdhww-1 */
+
+/* sc-component-id: ring__Wrapper-sc-1ki0q4s-0 */
+
+/* sc-component-id: ring__Circle-sc-1ki0q4s-1 */
+
+/* sc-component-id: hoop__Wrapper-sc-6dao9o-0 */
+
+/* sc-component-id: hoop__Ball-sc-6dao9o-1 */
+
+/* sc-component-id: flapper__Wrapper-kzbmuk-0 */
+
+/* sc-component-id: flapper__Ball-kzbmuk-1 */
+
+/* sc-component-id: magic__Wrapper-dtlj8d-0 */
+
+/* sc-component-id: magic__Ball-dtlj8d-1 */
+
+/* sc-component-id: jellyfish__Wrapper-qquojd-0 */
+
+/* sc-component-id: jellyfish__Ring-qquojd-1 */
+
+/* sc-component-id: trace__Wrapper-k17r81-0 */
+
+/* sc-component-id: trace__Ball-k17r81-1 */
+
+/* sc-component-id: sc-bdVaJa */
+
+/* sc-component-id: classic__Wrapper-sc-1ycp7u6-0 */
+
+/* sc-component-id: classic__Bar-sc-1ycp7u6-1 */
+
+/* sc-component-id: whisper__Wrapper-k8uff3-0 */
+
+/* sc-component-id: whisper__Ball-k8uff3-1 */
+
+/* sc-component-id: metro__Wrapper-sc-2iqssn-0 */
+</style><style data-styled="" data-styled-version="4.4.1">
+/* sc-component-id: metro__Ball-sc-2iqssn-1 */
+</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="wrapper"><h1 class="headline">City Weather Info Card</h1><form class="form-group custom-form" autocomplete="off"><div class="search-box"><input class="form-control" required="" placeholder="Enter the name of a city" value=""><button class="btn btn-primary" type="button">Show weather info</button></div></form><div style="padding: 10px; width: 100%;"><main class="current-conditions-box"><h3 class="city-country">Helsinki Finland</h3><div class="details"><h2 class="temperature-value">2<sup class="deg">°C</sup></h2><img class="weather-img" src="./Result_files/sun.c083fc151ebd00ab40a2.png" alt="sun"><p class="weather-text">Cloudy</p></div></main></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  
+
+<iframe src="./Result_files/start.html" style="display:none"></iframe>
+</body></html>
