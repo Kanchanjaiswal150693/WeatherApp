@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Icon } from 'react-icons-kit'
-import { search } from 'react-icons-kit/feather/search'
+//import { Icon } from 'react-icons-kit'
+//import { search } from 'react-icons-kit/feather/search'
 import { WeatherViewer } from './Components/WeatherViewer'
 
 function App() {
