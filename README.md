@@ -1,3 +1,4 @@
+This is weather app which was created to try NodeJS and learn how the weather app APIs can help us to create a wonderful app for own use. 
 1. WeatherAPP using Accuweather API
 2. Main JavaScript code can be viewed at App.js file which is located under src directory
 3. CSS codes can be seen for styling perpose in index.css file which is located under src directory
