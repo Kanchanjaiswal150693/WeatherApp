@@ -5,3 +5,5 @@ This is weather app which was created to try NodeJS and learn how the weather ap
 4. Accuweather SearchCity API is used under ./src/App.js
 5. Accuweather Location API is used under ./src/Components/WeatherViewer.js
 6. To see result screenshots before and after putting city name please go to WeatherApp/Result/ repodistory and open Before_putting_cityName.jpg and Result card.jpg
+
+Detailed Problem statement: https://docs.google.com/document/d/1VZ3x9UwkgrHhT60oAByG2wm-WdQGUDKX/edit#heading=h.gjdgxs
